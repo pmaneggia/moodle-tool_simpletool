@@ -40,7 +40,11 @@
         <table class="table table-striped">
           <thead>
             {{#headers}}
-              <th>{{.}}</th>
+              <th><a href={{{name.url}}}>{{name.text}}</a></th>
+              <th><a href={{{title.url}}}>{{title.text}}</a></th>
+              <th><a href={{{firstname.url}}}>{{firstname.text}}</a></th>
+              <th><a href={{{lastname.url}}}>{{lastname.text}}</a></th>
+              <th>{{# str }} submission, tool_simpletool {{/ str }}</th>
             {{/headers}}
           </thead>
           <tbody>

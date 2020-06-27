@@ -30,6 +30,8 @@ require_once(__DIR__ . '/../../../config.php');
 $url = new moodle_url('/admin/tool/richardnz/index.php');
 $title = get_string('pluginname', 'tool_simpletool');
 
+$sorting = optional_param('sorting', 'name', PARAM_ALPHA);
+
 // Setup the page.
 $PAGE->set_context(context_system::instance());
 $PAGE->set_url($url);
@@ -39,7 +41,7 @@ $PAGE->set_heading(get_string('index_header', 'tool_simpletool'));
 
 // Get some data
 // $data = fetch_data::user_data();
-$data = fetch_data::collaborate_submission_data();
+$data = fetch_data::collaborate_submission_data($sorting);
 
 // Call the renderer to display the data.
 $renderer = $PAGE->get_renderer('tool_simpletool');
