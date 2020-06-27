@@ -61,4 +61,39 @@ class tool_simpletool_renderer extends plugin_renderer_base {
         echo $this->output->footer();
 
     }
+
+    function display_table_collaborate_submissions($records) {
+        $data = new stdClass();
+
+        // Table headers.
+        $headers = array();
+
+        $headers[] = get_string('collaborate', 'tool_simpletool');
+        $headers[] = get_string('title', 'tool_simpletool');
+        $headers[] = get_string('firstname', 'tool_simpletool');
+        $headers[] = get_string('lastname', 'tool_simpletool');
+        $headers[] = get_string('submission', 'tool_simpletool');
+        $data->headers = $headers;
+
+        $data->rows = array();
+
+        // Table rows.
+        foreach ($records as $record) {
+            $row = array();
+        
+            $row['name'] = $record->name;
+            $row['title'] = $record->title;
+            $row['firstname'] = $record->firstname;
+            $row['lastname'] = $record->lastname;
+            $row['submission'] = $record->submission;
+
+            $data->rows[] = $row;
+        }
+
+        // Display the table.
+        echo $this->output->header();
+        echo $this->render_from_template('tool_simpletool/collaboratesubmissions', $data);
+        echo $this->output->footer();
+
+    }
 }

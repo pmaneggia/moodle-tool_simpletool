@@ -30,10 +30,12 @@ defined('MOODLE_INTERNAL') || die();
 $string['pluginname'] = 'A simple tool';
 $string['greeting'] = 'Hello World!';
 $string['index_header'] = 'Main page';
-$string['table_header'] = 'Users';
+$string['table_header'] = 'Collaborate Submissions';
 
 // Table headers.
 $string['username'] = 'Username';
 $string['firstname'] = 'First name';
 $string['lastname'] = 'Surname';
-
+$string['collaborate'] = 'Collaborate';
+$string['title'] = 'Title';
+$string['submission'] = 'Submission';
